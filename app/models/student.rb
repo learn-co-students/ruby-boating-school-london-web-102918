@@ -6,13 +6,13 @@ class Student
 
   def initialize(first_name)
     @first_name = first_name
-    @all << self
+    @@all << self
   end
 
 # --- INSTANCE METHODS ----
 
-  def add_boating_test(test_name, student, b_test_status, instructor)
-    Boatingtest.new(test_name)
+  def add_boating_test(boating_test_name)
+    Boatingtest.new(boating_test_name)
   end
 
 
