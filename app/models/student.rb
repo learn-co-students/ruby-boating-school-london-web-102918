@@ -11,15 +11,14 @@ class Student
 
 # --- INSTANCE METHODS ----
 
-  def add_boating_test(boating_test_name)
-    Boatingtest.new(boating_test_name)
+  def add_boating_test(boating_test_name, status, instructor)
+  BoatingTest.new(boating_test_name, status, instructor, self)
   end
-
 
 # ----- CLASS METHODS -----
 
-  def self.find_student(name_input)
-    puts
+  def self.find_student(first_name)
+    @@all.find {|student| first_name == student}
   end
 
   def self.all
