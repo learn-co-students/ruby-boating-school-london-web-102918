@@ -26,8 +26,8 @@ class Instructor
 	def self.student_grade_percentage(student_first_name)
 		tests_taken = []
 		tests_passed = []
-	  tests_taken = BoatingTest.all.each {|test| test.student.first_name == student_first_name}
-		tests_passed << BoatingTest.all.find {|test| test.test_status == "passed"}
+	  tests_taken = BoatingTest.all.select {|test| test.student.first_name == student_first_name}
+		tests_passed = BoatingTest.all.select {|test| test.test_status == "passed"}
 		tests_passed.length * 100 / tests_taken.length
 	end
 end
